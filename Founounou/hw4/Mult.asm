@@ -15,7 +15,7 @@
 @R0
 D=M
 @R2
-M=0          // initialize result to 0
+M=0
 
 // Check if R0 is zero (terminate if true)
 (LOOP)
@@ -26,17 +26,17 @@ D;JEQ
 
 // Add R1 to R2
 @R1
-D=M          // D = R1 (multiplier)
+D=M
 @R2
-M=D+M        // R2 = R2 + R1
+M=D+M
 
 // Decrement R0
 @R0
-M=M-1        // R0 = R0 - 1
+M=M-1
 
 // Repeat loop
 @LOOP
-0;JMP        // Go back to the beginning of the loop
+0;JMP
 
 (END)
 @END
