@@ -25,7 +25,7 @@ CHIP Memory {
     OUT out[16];
 
     PARTS:
-	DMux(in=load, sel=address[14], a=loadRAM, b=loadDisplay);
+    DMux(in=load, sel=address[14], a=loadRAM, b=loadDisplay);
 
     RAM16K(in=in, load=loadRAM, address=address[0..13], out=ramOut);
     Screen(in=in, load=loadDisplay, address=address[0..12], out=screenOut);

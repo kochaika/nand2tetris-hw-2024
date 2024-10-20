@@ -32,7 +32,7 @@ CHIP CPU {
         pc[15];          // address of next instruction
 
     PARTS:
-	// determine if the current instruction is an A-instruction or C-instruction
+    // determine if the current instruction is an A-instruction or C-instruction
     Not(in=instruction[15], out=Ainst);
     Not(in=Ainst, out=Cinst);
 
