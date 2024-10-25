@@ -41,14 +41,16 @@ CHIP CPU {
     And(a=instruction[15], b=instruction[4], out=loadD);
 
     // Registers
-	ARegister(in= outMuxA, load= loadA, out= outAReg, out[0..14]= addressM);
+    ARegister(in= outMuxA, load= loadA, out= outAReg, out[0..14]= addressM);
     DRegister(in= outALU, load= loadD, out= outDReg);
 
     // Helper for ALU
     Mux16(a= outAReg, b= inM, sel= instruction[12], out= outMuxALU);
 
     // ALU
-    ALU(x= outDReg, y= outMuxALU, zx= instruction[11], nx= instruction[10], zy= instruction[9], ny= instruction[8], f= instruction[7] , no= instruction[6], out= outALU , out= outM, zr= ALUzr, ng= ALUng );
+    ALU(x= outDReg, y= outMuxALU, zx= instruction[11], nx= instruction[10], 
+        zy= instruction[9], ny= instruction[8], f= instruction[7] , no= instruction[6], 
+        out= outALU , out= outM, zr= ALUzr, ng= ALUng );
 
     // Helpers for PC, JumpFinder
     Not(in=ALUzr, out=notALUzr);
