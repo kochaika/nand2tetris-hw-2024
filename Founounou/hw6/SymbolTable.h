@@ -1,15 +1,3 @@
-/**
- * SymbolTable.h
- * 
- * @author Franklin Ogidi 
- * 
- * @description Manages a table of symbols including predefined variables, user-defined variables, and labels.
- * This program was written as part of the NandToTetris course: https://www.nand2tetris.org/project06
- * 
- * @version 1.0
- * 
- */
-
 #ifndef SYMBOLTABLE_H
 #define SYMBOLTABLE_H
 
