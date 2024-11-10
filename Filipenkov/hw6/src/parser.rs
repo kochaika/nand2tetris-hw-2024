@@ -47,11 +47,11 @@ impl Parser {
         self.c_instr_regex
             .captures(line)
             .ok_or(anyhow!("Invalid C instruction: {}", line))
-            .and_then(|m| {
+            .map(|m| {
                 let dest = m.get(1).map_or("null", |m| m.as_str()).to_string();
                 let comp = m.get(2).map_or("", |m| m.as_str()).to_string();
                 let jump = m.get(3).map_or("null", |m| m.as_str()).to_string();
-                Ok(Instruction::C { dest, comp, jump })
+                Instruction::C { dest, comp, jump }
             })
     }
 
