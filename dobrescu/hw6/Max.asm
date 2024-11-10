@@ -1,0 +1,16 @@
+@0
+D=M              
+@1
+D=D-M            
+@10
+D;JGT            
+@1
+D=M             
+@12
+0;JMP          
+(OUTPUT_FIRST)
+@0
+D=M              
+(DONE)
+@2
+M=D              

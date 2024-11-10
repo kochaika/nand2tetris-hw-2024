@@ -1,0 +1,15 @@
+@PADDLE
+M=0              
+@BALL
+M=0              
+@MAIN_LOOP
+0;JMP            
+(MAIN_LOOP)
+@BALL
+D=M
+@1
+D=D+A            
+@BALL
+M=D
+@MAIN_LOOP
+0;JMP            
