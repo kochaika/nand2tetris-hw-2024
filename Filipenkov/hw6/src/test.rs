@@ -1,11 +1,11 @@
-use crate::Translator;
+use crate::Assembler;
 
 fn test_file(name: &str) {
-    let mut translator = Translator::new();
+    let mut translator = Assembler::new();
     let code = std::fs::read_to_string(format!("06/{}.asm", name)).unwrap();
     let translated = translator.translate(&code).unwrap();
-    let expected = std::fs::read_to_string(format!("06/{}.expected", name)).unwrap().trim().to_string();
-    assert_eq!(translated, expected);
+    let expected = std::fs::read_to_string(format!("06/{}.expected", name)).unwrap();
+    assert_eq!(translated.trim().to_string(), expected.trim().to_string());
 }
 
 #[test]
