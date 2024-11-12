@@ -56,7 +56,7 @@ CHIP ALU {
     Or8Way(in = h1out,out = hf1);
     Or8Way(in = h2out,out = hf2);
     Or(a=hf1,b=hf2,out=hf);
-    Not(in=hf,out=nhf);
+    Not(in=hf,out=zr);
     And16(a=fout,b = true,out[15] = ng,out[0..14]=unnec);
-    Or16(a=fout,b = false,out=out);   
+    Or16(a=fout,b = false,out=out);
 }
